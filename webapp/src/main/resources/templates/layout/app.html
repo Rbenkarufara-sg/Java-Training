@@ -22,9 +22,11 @@
       </li>
     </ul>
     <!--/* 右寄せ */-->
-    <div>
+    <div sec:authorize="isAuthenticated()">
       <!-- TODO: ログアウト -->
-      <a th:href="@{/login}" th:aria-current="${content == ' '} ? ' page'">ログアウト</a>
+      <form th:action="@{/logout}" method="post">
+        <button type="submit">ログアウト</button>
+      </form>
     </div>
   </nav>
 
