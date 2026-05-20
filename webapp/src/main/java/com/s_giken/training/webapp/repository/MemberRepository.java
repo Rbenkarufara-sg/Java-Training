@@ -60,10 +60,10 @@ public class MemberRepository implements IMemberRepository {
      * @return Optional型の Memberオブジェクト
      */
     @Override
-    public List<Member> findByMailLike(String mail) {
-        String sql = "SELECT * FROM T_MEMBER WHERE mail like ?";
-        Object[] args = { mail };
-        int[] argTypes = { Types.VARCHAR };
+    public List<Member> findByMailLike(String mail, String name) {
+        String sql = "SELECT * FROM T_MEMBER WHERE mail like ? AND name like ?";
+        Object[] args = { mail, name };
+        int[] argTypes = { Types.VARCHAR, Types.VARCHAR };
         List<Member> result = jdbcTemplate.query(sql, args, argTypes, rowMapper);
         return result;
     }

@@ -10,13 +10,13 @@
       <input type="text" th:field="*{mail}" />
     </label>
     <!--/* 氏名 */-->
-    <label for="name">氏名（部分一致）
-      <input type="text" th:field="*{name}">
-    </label>
     <!--/* ここにテキストフォームを設置 */-->
+    <label for="name">氏名（部分一致）
+      <input type="text" th:field="*{name}" />
+    </label>
     <div class="button-group">
       <button type="submit">検索</button>
-      <a role="button" class="outline" th:href="@{/member/add}">登録</a>
+      <a role="button" class="outline" th:href="@{/member/add}">新規登録</a>
     </div>
   </form>
 </div>
