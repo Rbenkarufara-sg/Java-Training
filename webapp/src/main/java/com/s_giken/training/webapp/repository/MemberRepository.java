@@ -34,7 +34,7 @@ public class MemberRepository implements IMemberRepository {
     }
 
     /**
-     * メールアドレスの一部にマッチするの加入者情報リストを取得する。
+     * 会員IDに基づいて会員情報を取得する
      *
      * @return Optional型の Memberオブジェクト
      */
@@ -60,9 +60,9 @@ public class MemberRepository implements IMemberRepository {
      * @return Optional型の Memberオブジェクト
      */
     @Override
-    public List<Member> findByMailLike(String mail, String name) {
+    public List<Member> findByMailLikeAndName(String mail, String name) {
         String sql = "SELECT * FROM T_MEMBER WHERE mail like ? AND name like ?";
-        Object[] args = { mail, name };
+        Object[] args = { "%" + mail + "%", "%" + name + "%" };
         int[] argTypes = { Types.VARCHAR, Types.VARCHAR };
         List<Member> result = jdbcTemplate.query(sql, args, argTypes, rowMapper);
         return result;

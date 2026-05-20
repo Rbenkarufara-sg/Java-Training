@@ -24,7 +24,7 @@ public interface IMemberRepository {
      * 
      * @return Optional型の Memberオブジェクト
      */
-    public List<Member> findByMailLike(String mail, String name);
+    public List<Member> findByMailLikeAndName(String mail, String name);
 
     /**
      * 加入者情報をデータベースへ登録する。
