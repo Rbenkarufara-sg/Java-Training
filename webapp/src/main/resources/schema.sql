@@ -23,3 +23,14 @@ CREATE TABLE IF NOT EXISTS t_member (
     modified_at	    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (member_id)
 );
+
+CREATE TABLE IF NOT EXISTS t_charge (
+    charge_id   BIGINT NOT NULL,
+    name        VARCHAR(127) NOT NULL,
+    amount      NUMERIC(9,0) NOT NULL,
+    start_date  DATE NOT NULL,
+    end_date    DATE,
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (charge_id)
+);

@@ -1,1 +1,3 @@
 insert into T_MEMBER (MEMBER_ID, MAIL, NAME, ADDRESS, START_DATE, END_DATE, PAYMENT_METHOD) values (1, 'test-taro@s-giken.com', 'テスト太郎',  '東京都...', '2021-01-01', '9999-12-31', 1);
+insert into T_CHARGE (CHARGE_ID, NAME, AMOUNT, START_DATE, END_DATE) values (1, 'シンプルパック', '990', '2026-01-01', '9999-12-31');
+insert into T_CHARGE (CHARGE_ID, NAME, AMOUNT, START_DATE, END_DATE) values (2, 'ファミリーパック', '2100', '2026-01-01', '2026-12-31');
