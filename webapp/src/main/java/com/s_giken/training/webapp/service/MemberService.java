@@ -56,7 +56,7 @@ public class MemberService implements IMemberService {
     @Override
     public List<Member> findByConditions(MemberSearchCondition memberSearchCondition) {
         // TODO: 氏名検索用メソッドを呼び出すように修正
-        return memberRepository.findByMailLike("%" + memberSearchCondition.getMail() + "%", 
+        return memberRepository.findByMailLikeAndName("%" + memberSearchCondition.getMail() + "%", 
         "%" + memberSearchCondition.getName() + "%");
     }
     /**
