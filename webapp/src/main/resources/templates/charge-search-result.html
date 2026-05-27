@@ -18,7 +18,7 @@
     <tbody>
       <tr th:if="${!#lists.isEmpty(list)}" th:each="row : ${list}">
         <td>
-          <a th:href="@{/charge/search}" th:text="${row.chargeId}"></a>
+          <a th:href="@{/charge/edit/{id}(id=${row.chargeId})}" th:text="${row.chargeId}"></a>
         </td>
         <td th:text="${row.name}"></td>
         <td th:text="${row.amount}"></td>

@@ -29,7 +29,7 @@ public class ChargeRowMapper implements RowMapper<Charge> {
 
         charge.setChargeId(rs.getLong("charge_id"));
         charge.setName(rs.getString("name"));
-        charge.setAmount(rs.getLong("amount"));
+        charge.setAmount(rs.getInt("amount"));
         
         // データベースから取得した DATE 型は、Javaでは、java.sql.Date型となるので、
         // それを、java.util.time.LocalDate形に変換する。

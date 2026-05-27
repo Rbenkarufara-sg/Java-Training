@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS t_member (
     PRIMARY KEY (member_id)
 );
 
+CREATE SEQUENCE IF NOT EXISTS t_charge_seq AS BIGINT START WITH 1 INCREMENT BY 1 NO CYCLE; 
+
 CREATE TABLE IF NOT EXISTS t_charge (
     charge_id   BIGINT NOT NULL,
     name        VARCHAR(127) NOT NULL,
@@ -44,7 +46,7 @@ INSERT INTO T_USER VALUES ('user', '$argon2id$v=19$m=14,t=2,p=1$eVczdXhrMWlDZERW
 
 INSERT INTO T_MEMBER VALUES (nextval('t_member_seq'), 'yamada@example.com', '山田　太郎', '東京都千代田区1-1-1', '2026-01-01', NULL, 1, NOW(), NOW());
 
-INSERT INTO T_CHARGE (CHARGE_ID, NSME, AMOUNT, START_DATE, END_DATE,) values (1, 'シンプルパック', '990', '2026-01-01', '9999-12-31' NOW(), NOW());
+INSERT INTO T_CHARGE VALUES (nextval('t_charge_seq'), 'シンプルパック', '990', '2026-01-01', NULL, NOW(), NOW());
 
 COMMIT;
 __EOS__
